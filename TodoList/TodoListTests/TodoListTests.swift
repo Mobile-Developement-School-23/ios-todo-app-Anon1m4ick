@@ -1,5 +1,5 @@
 import XCTest
-@testable import TodoList
+@testable import ToDoList
 
 //в консоль пишется только это строка, хз почему(2023-06-17 01:31:51.593790+0200 TodoListUITests-Runner[25437:518163] Running tests...),
 //но все тесты проходятся, оно билдится и тест саксиид и 87,9 покрытия туда айтема
