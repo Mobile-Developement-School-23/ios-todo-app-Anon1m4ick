@@ -1,6 +1,7 @@
+
 //import XCTest
 //
-//final class TodoListUITestsLaunchTests: XCTestCase {
+//final class ToDoListUITestsLaunchTests: XCTestCase {
 //
 //    override class var runsForEachTargetApplicationUIConfiguration: Bool {
 //        true

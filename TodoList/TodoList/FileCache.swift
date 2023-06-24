@@ -92,7 +92,7 @@ extension FileCache {
     private func getFileURL(with fileName: String, extension ext: String) -> URL? {
         let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         let fileURL = documentDirectory?.appendingPathComponent(fileName).appendingPathExtension(ext)
-//        print(fileURL) //это я путь искал бывает полезно
+//        print(fileURL) //это я путь искал
         return fileURL
     }
 
