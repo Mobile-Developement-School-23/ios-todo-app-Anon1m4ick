@@ -4,13 +4,14 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    //    private lazy var label = makeLabel()
-    private lazy var navBarContainerView = makeNavBarContainerView()
+        private lazy var navBarContainerView = makeNavBarContainerView()
     private lazy var leftBarButton = makeBarButton(with: "Отменить") // TODO: - Localize
     private lazy var titleLabel = makeTitleLabel()
     private lazy var rightBarButton = makeBarButton(with: "Сохранить") // TODO: - Localize
     private lazy var scrollView = makeScrollView()
     private lazy var textView = makeTextView()
+    private lazy var stackView = makeStackView()
+
 
     
     override func viewDidLoad() {
@@ -22,9 +23,7 @@ class ViewController: UIViewController {
         private func makeStackView() -> UIStackView {
             let stackView = UIStackView(
                 arrangedSubviews: [
-                    textView,
-//                    detailsSecondaryView,
-//                    deleteButton
+                    textView
                 ]
             )
             stackView.axis = .vertical
@@ -37,7 +36,6 @@ class ViewController: UIViewController {
         private func makeTextView() -> UITextView {
             let textView = UITextView()
             textView.font = DSFont.body.font
-//            textView.delegate = self
             textView.isScrollEnabled = false
             textView.layer.cornerRadius = 16
             textView.textColor = DSColor.labelPrimary.color
@@ -49,7 +47,7 @@ class ViewController: UIViewController {
     
         private func makeScrollView() -> UIScrollView {
             let scrollView = UIScrollView()
-//            scrollView.addSubview(stackView)
+            scrollView.addSubview(stackView)
             scrollView.alwaysBounceVertical = true
             scrollView.showsVerticalScrollIndicator = false
             scrollView.showsHorizontalScrollIndicator = false
@@ -148,24 +146,19 @@ class ViewController: UIViewController {
                 scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
             ]
         )
-//        NSLayoutConstraint.activate(
-//            [
-//                stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-//                stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
-//                stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
-//                stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-//                stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -32)
-//            ]
-//        )
+        NSLayoutConstraint.activate(
+            [
+                stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+                stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+                stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
+                stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+                stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -32)
+            ]
+        )
         NSLayoutConstraint.activate(
             [
                 textView.heightAnchor.constraint(greaterThanOrEqualToConstant: 120)
             ]
         )
     }
-    
-    
-        
-    
-    
 }
